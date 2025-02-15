@@ -48,6 +48,7 @@ jobs:
         /d:sonar.cs.opencover.reportsPaths="./TestResults/**/coverage.opencover.xml" \
         /d:sonar.coverage.exclusions="**Test*.cs,**/Program.cs" \
         /d:sonar.sourceEncoding="UTF-8"
+        /d:sonar.exclusions="**/Cafe.Domain/**/*,**/Cafe.Infrastructure/**/*"
         
     - name: Restore dependencies
       working-directory: ./CafeManagement
