@@ -40,8 +40,8 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         dotnet sonarscanner begin \
-        /k:"YOUR_PROJECT_KEY" \
-        /o:"YOUR_ORGANIZATION" \
+        /k:"thilandakshina_CafeEMP22" \
+        /o:"thilandakshina-1" \
         /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
         /d:sonar.host.url="https://sonarcloud.io" \
         /d:sonar.cs.vstest.reportsPaths="./TestResults/*.trx" \
