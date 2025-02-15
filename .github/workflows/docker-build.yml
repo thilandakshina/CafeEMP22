@@ -40,15 +40,16 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         dotnet sonarscanner begin \
-        /k:"thilandakshina_CafeEMP22" \
-        /o:"thilandakshina-1" \
+        /k:"YOUR_PROJECT_KEY" \
+        /o:"YOUR_ORGANIZATION" \
         /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
         /d:sonar.host.url="https://sonarcloud.io" \
         /d:sonar.cs.vstest.reportsPaths="./TestResults/*.trx" \
         /d:sonar.cs.opencover.reportsPaths="./TestResults/**/coverage.opencover.xml" \
         /d:sonar.coverage.exclusions="**Test*.cs,**/Program.cs" \
-        /d:sonar.sourceEncoding="UTF-8"
-        /d:sonar.exclusions="**/Cafe.Domain/**/*,**/Cafe.Infrastructure/**/*"
+        /d:sonar.sourceEncoding="UTF-8" \
+        /d:sonar.exclusions="**/Cafe.Domain/**/*,**/Cafe.Infrastructure/**/*" \
+        /d:sonar.cpd.exclusions="**/Cafe.Domain/**/*,**/Cafe.Infrastructure/**/*"
         
     - name: Restore dependencies
       working-directory: ./CafeManagement
